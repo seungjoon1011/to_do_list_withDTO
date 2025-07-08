@@ -1,7 +1,7 @@
 package com.example.to_do_list_withDTO.controller;
 
 
-import com.example.to_do_list_withDTO.dto.SignupDTO;
+import com.example.to_do_list_withDTO.dto.SignupDto;
 import com.example.to_do_list_withDTO.model.User;
 import com.example.to_do_list_withDTO.repository.UserRepository;
 import jakarta.validation.Valid;
@@ -20,14 +20,14 @@ public class SignupController {
 
     @GetMapping("/signup")
     public String showSignup(Model model) {
-        model.addAttribute("signupDto", new SignupDTO());
+        model.addAttribute("signupDto", new SignupDto());
 
         return "signup";
     }
 
     @PostMapping("/signup")
     public String doSignup(
-            @Valid @ModelAttribute("signupDto") SignupDTO signupDTO,
+            @Valid @ModelAttribute("signupDto") SignupDto signupDTO,
             BindingResult bindingResult,
             Model model
     ) {
